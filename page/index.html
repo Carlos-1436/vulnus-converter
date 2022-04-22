@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnus Converter</title>
+
+    <!--
+        CSS
+    -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!--
+        Google Fonts
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>Vulnus Converter 1.0V</h1>
+        <p id="disclink"><a href="https://discord.gg/w3PdcaG">Vulnus</a> Discord server</p>
+    </div>
+    <div class="container">
+        <div class="inputs">
+            <label for="songArtist">Song artist</label>
+            <input type="text" id="songArtist" placeholder="Ex.: Diabarha">
+
+            <label for="fileName">Song file name</label>
+            <input type="text" id="fileName" placeholder="Ex.: Diabarha - The Mirror.mp3">
+
+            <label for="mapper">Mapper name</label>
+            <input type="text" id="mapper" placeholder="Ex.: SuroYT">
+
+            <label for="map">Map name</label>
+            <input type="text" id="map" placeholder="Ex.: The Mirror">
+
+            <label for="diff">Difficulty name</label>
+            <input type="text" id="diff" placeholder="Ex.: 65*, Mirror, etc">
+
+            <label for="raw">Raw GitHub URL</label>
+            <input type="text" id="raw" placeholder="Ex.: https://raw.githubusercontent.com/...">
+
+            <button id="convertBtn" onclick="convert();">Convert BeatMap</button>
+        </div>
+    </div>
+    <footer>
+        <p style="font-size: 14pt; text-align: center;">Made with 💖 by Laxy#7573</p>
+    </footer>
+</body>
+</html>
