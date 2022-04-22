@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
-const { convert } = require("./converter.js");
+const { getData } = require("./converter.js");
 
 class appWindow {
     constructor(_width, _height) {
@@ -24,7 +24,7 @@ class appWindow {
 let window;
 
 app.on("ready", () => {
-    window = new appWindow(700, 600);
+    window = new appWindow(400, 800);
     window.win.loadFile("./page/index.html");
 
     app.on("window-all-closed", () => {
@@ -38,5 +38,5 @@ app.on("window-all-closed", () => {
 });
 
 ipcMain.on("convert", (evt, data) => {
-    convert(data, evt);
+    getData(data, evt);
 });

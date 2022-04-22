@@ -23,7 +23,7 @@
 </head>
 <body>
     <div class="title">
-        <h1>Vulnus Converter 1.0V</h1>
+        <h1>Vulnus Converter 1.1V</h1>
         <p id="disclink"><a href="https://discord.gg/w3PdcaG">Vulnus</a> Discord server</p>
     </div>
     <div class="container">
@@ -43,8 +43,17 @@
             <label for="diff">Difficulty name</label>
             <input type="text" id="diff" placeholder="Ex.: 65*, Mirror, etc">
 
-            <label for="raw">Raw GitHub URL</label>
+            <label for="raw">Raw GitHub URL (or map data)</label>
             <input type="text" id="raw" placeholder="Ex.: https://raw.githubusercontent.com/...">
+
+            <label for="offset">Offset</label>
+            <input type="text" id="offset" placeholder="Default: 0">
+
+            <label for="raw">Approach Time (s)</label>
+            <input type="text" id="apprTime" placeholder="Default: 1">
+
+            <label for="raw">Approach Distance</label>
+            <input type="text" id="apprDist" placeholder="Default: 50">
 
             <button id="convertBtn" onclick="convert();">Convert BeatMap</button>
         </div>

@@ -1,12 +1,27 @@
 const ipc = require("electron").ipcRenderer;
 
 async function convert() {
-    let artist = document.getElementById("songArtist").value;
-    let fileName = document.getElementById("fileName").value;
-    let mapper = document.getElementById("mapper").value;
-    let mapName = document.getElementById("map").value;
-    let diffName = document.getElementById("diff").value;
-    let raw = document.getElementById("raw").value;
+    let artist = document.getElementById("songArtist").value.trim();
+    let fileName = document.getElementById("fileName").value.trim();
+    let mapper = document.getElementById("mapper").value.trim();
+    let mapName = document.getElementById("map").value.trim();
+    let diffName = document.getElementById("diff").value.trim();
+    let raw = document.getElementById("raw").value.trim();
+    let offset = document.getElementById("offset").value;
+    let apprTime = document.getElementById("apprTime").value;
+    let apprDist = document.getElementById("apprDist").value;
+
+    if (isNaN(parseFloat(offset))) {
+        offset = 0;
+    }
+
+    if (isNaN(parseInt(apprTime))) {
+        apprTime = 1;
+    }
+
+    if (isNaN(parseInt(apprDist))) {
+        apprDist = 50;
+    }
 
     // Get all data
     let metaJson = {
@@ -19,8 +34,8 @@ async function convert() {
     }
 
     let mapJson = {
-        _approachDistance: 50,
-        _approachTime: 1,
+        _approachDistance: apprDist,
+        _approachTime: apprTime,
         _name: diffName,
         _notes: []
     }
@@ -29,5 +44,5 @@ async function convert() {
         alert(res);
     });
 
-    ipc.send("convert", [metaJson, mapJson, raw]);
+    ipc.send("convert", [metaJson, mapJson, raw, offset]);
 }
