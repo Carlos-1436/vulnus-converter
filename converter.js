@@ -31,7 +31,7 @@ function convert(infos, evt) {
     let format = infos[2].split(",");
     format.shift() // Remover o ID da música do roblox
 
-    // Converter cada uma das notas para o vulkan e por no array _notes
+    // Converter cada uma das notas para o vulnus e por no array _notes
     try {
         for (let i = 0; i < format.length; i++) {
             let formatedNote = format[i].split("|");
