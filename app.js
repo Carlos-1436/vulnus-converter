@@ -26,10 +26,6 @@ let window;
 app.on("ready", () => {
     window = new appWindow(400, 800);
     window.win.loadFile("./page/index.html");
-
-    app.on("window-all-closed", () => {
-        app.quit();
-    });
 });
 
 app.on("window-all-closed", () => {
